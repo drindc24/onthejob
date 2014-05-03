@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  middle_name: MyString
+  date_of_birth: 2014-04-29
+  gender: MyString
+  level: 1
+  emergency_contact: MyString
+  civil_status: MyString
+  address: MyString
+  tin: MyString
+  pagibig: MyString
+  philhealth: MyString
+  telephone_number: MyString
+  mobile_number: MyString
+
+two:
+  first_name: MyString
+  last_name: MyString
+  middle_name: MyString
+  date_of_birth: 2014-04-29
+  gender: MyString
+  level: 1
+  emergency_contact: MyString
+  civil_status: MyString
+  address: MyString
+  tin: MyString
+  pagibig: MyString
+  philhealth: MyString
+  telephone_number: MyString
+  mobile_number: MyString
