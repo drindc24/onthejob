@@ -16,7 +16,7 @@
 /tmp
 
 config/database.yml
-.idea
+.idea/
 
 .DS_Store
 
