@@ -8,7 +8,12 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
- *= require_tree ./plugins/
- */
+ *= require bootstrap
+ *= require sb-admin
+ *= require /plugins/dataTables/dataTables
+ *= require /plugins/morris/morris-0
+ *= require /plugins/social-buttons/social-buttons
+ *= require /plugins/timeline/timeline
+ *= require_tree ./font-awesome/css
+ *= require_tree ./font-awesome/fonts
+*/
