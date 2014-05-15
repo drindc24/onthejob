@@ -6,6 +6,10 @@ class EmployeesController < ApplicationController
     @employees = Employee.all
   end
 
+  def show
+    @employee = Employee.find(params[:id])
+  end
+
   def check_if_logged_in
     redirect_to new_employee_session_path unless current_employee
   end
