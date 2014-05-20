@@ -10,7 +10,7 @@
  *
  *= require bootstrap
  *= require sb-admin
- *= require /plugins/dataTables/dataTables
+ *= require /plugins/dataTables/dataTables.bootstrap
  *= require /plugins/morris/morris-0
  *= require /plugins/social-buttons/social-buttons
  *= require /plugins/timeline/timeline
