@@ -58,7 +58,10 @@ EmployeeTool::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
   devise_for :employees, :path => '', path_names: {sign_in: "login", sign_out: "logout"}
-  resources :employees, :only => [:index, :show]
+  resources :companies, :only => [:show] do
+    resources :employees, :only => [:index, :show]
+  end
 
-  root to: "employees#index"
+  root to: "employees#show"
+  #match 'companies/:id/employees/:id' => 'employees#show', :as => :root
 end
