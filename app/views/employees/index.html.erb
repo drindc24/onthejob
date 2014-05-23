@@ -17,15 +17,19 @@
                             <thead>
                                 <tr>
                                   <th>Name</th>
-                                  <th>Job Title</th>
+                                  <th>Department</th>
                                   <th>Level</th>
+                                  <th>Sick Leaves</th>
+                                  <th>Vacation Leaves</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="odd gradeX">
                                   <td><%= link_to employee.name, company_employee_path(employee.company, employee) %></td>
-                                  <td><%= employee.job_title %></td>
+                                  <td><%= employee.department.name %></td>
                                   <td><%= employee.level %></td>
+                                  <td><%= employee.sick_leaves %></td>
+                                  <td><%= employee.vacation_leaves %></td>
                                 </tr>
                             </tbody>
                         </table>
