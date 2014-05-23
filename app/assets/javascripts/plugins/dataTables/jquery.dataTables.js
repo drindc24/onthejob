@@ -2210,7 +2210,7 @@
 				var match = val.name.match(rbracket);
 	
 				if ( match ) {
-					// Support for arrays
+					// support for arrays
 					var name = match[0];
 	
 					if ( ! tmp[ name ] ) {
@@ -2444,7 +2444,7 @@
 	function _fnAjaxUpdateDraw ( settings, json )
 	{
 		// v1.10 uses camelCase variables, while 1.9 uses Hungarian notation.
-		// Support both
+		// support both
 		var compat = function ( old, modern ) {
 			return json[old] !== undefined ? json[old] : json[modern];
 		};
