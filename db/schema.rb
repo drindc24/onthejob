@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140519064002) do
+ActiveRecord::Schema.define(:version => 20140520125531) do
+
+  create_table "absences", :force => true do |t|
+    t.integer  "employee_id"
+    t.integer  "department_id"
+    t.integer  "leave_type_id"
+    t.date     "date_filed"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.decimal  "total_hours",   :precision => 3, :scale => 1
+    t.string   "status"
+    t.text     "reasons"
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
+  end
 
   create_table "companies", :force => true do |t|
     t.string   "full_name"
@@ -23,6 +37,14 @@ ActiveRecord::Schema.define(:version => 20140519064002) do
     t.string   "slug"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "departments", :force => true do |t|
+    t.string   "name"
+    t.integer  "department_head_id"
+    t.integer  "company_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "employees", :force => true do |t|
@@ -54,9 +76,25 @@ ActiveRecord::Schema.define(:version => 20140519064002) do
     t.string   "last_sign_in_ip"
     t.integer  "company_id"
     t.string   "job_title"
+    t.integer  "department_id"
   end
 
   add_index "employees", ["email"], :name => "index_employees_on_email", :unique => true
   add_index "employees", ["reset_password_token"], :name => "index_employees_on_reset_password_token", :unique => true
+
+  create_table "leave_credits", :force => true do |t|
+    t.integer  "employee_id"
+    t.integer  "leave_type_id"
+    t.decimal  "count",         :precision => 3, :scale => 1
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
+  end
+
+  create_table "leave_types", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
 end
