@@ -21,12 +21,23 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'rspec-rails'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
   gem 'debugger'
+end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'factory_girl'
+  gem 'timecop'
+  gem 'simplecov', :require => false
+  gem 'spork'
 end
 
 gem 'jquery-rails'
 gem 'devise'
+#gem 'zip'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
