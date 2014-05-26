@@ -21,4 +21,15 @@ FactoryGirl.define do
     date_founded Date.today
     business_phone "123-4567"
   end
+
+  factory :leave_type do |n|
+    name "Sample Credit"
+    description "Sample Credit"
+  end
+
+  factory :leave_credit do |n|
+    association :employee
+    association :leave_type
+    count 10
+  end
 end
