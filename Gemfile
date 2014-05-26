@@ -33,6 +33,7 @@ group :test do
   gem 'timecop'
   gem 'simplecov', :require => false
   gem 'spork'
+  gem 'selenium-webdriver'
 end
 
 gem 'jquery-rails'
