@@ -11,4 +11,7 @@ Feature: Sample
 
   Scenario: Willing to edit my account
     Given I am a new, authenticated user
+    And I go to home page
+#    When I go to the login page
+#    And I fill in the following:
 # And more view checking stuff
