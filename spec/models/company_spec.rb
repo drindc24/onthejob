@@ -14,6 +14,11 @@ describe Company do
     end
   end
 
+  context "relationships" do
+    it { should have_many(:employees) }
+    it { should have_many(:departments) }
+  end
+
   context "is_employee?" do
     let!(:employee1){ create(:employee) }
     let!(:employee2){ create(:employee) }

@@ -35,7 +35,7 @@ class Employee < ActiveRecord::Base
   end
 
   def sick_leaves
-    leave = self.leave_credits.find_by_leave_type_id(1)
+    leave = self.leave_credits.joins(:leave_type).where(:leave_types => {:name => "Sick Leave"}).first
     leave.nil? ? 0 : leave.count
   end
 

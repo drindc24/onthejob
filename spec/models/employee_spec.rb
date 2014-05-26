@@ -31,17 +31,20 @@ describe Employee do
 
   context "name" do
     it "should return the employee first name and last name" do
-      employee.name.should eq("Athena Kassandra dela Cruz")
+      employee.name.should eq(employee.first_name + " " + employee.last_name)
     end
   end
 
   context "sick_leaves" do
+    let!(:credit){ create(:leave_credit, :count => 10) }
+    let!(:leave_type){ create(:leave_type, :name => "Sick Leave") }
     before do
-      #create()
+      leave_type.leave_credits << credit
+      employee.leave_credits << credit
     end
 
     it "should return the user amount of sick leaves" do
-
+       employee.sick_leaves.should eql(10)
     end
   end
 end

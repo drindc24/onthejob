@@ -9,7 +9,7 @@ describe LeaveCredit do
     end
 
     context "uniqueness" do
-
+      it { should validate_uniqueness_of(:employee_id).scoped_to(:leave_type_id) }
     end
   end
 end
