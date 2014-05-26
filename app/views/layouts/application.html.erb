@@ -34,7 +34,10 @@
                     </li>
                     <li class="divider"></li>
                     <!--<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>-->
-                    <li><i class="fa fa-sign-out fa-fw"></i><%= link_to "Logout", destroy_employee_session_path, :method => :delete %></li>
+                    <li><%= link_to destroy_employee_session_path, :method => :delete do %>
+                          <i class="fa fa-sign-out fa-fw"></i> Logout
+                        <% end %>
+                    </li>
                   </ul>
                 </li>
             </ul>
@@ -53,7 +56,9 @@
                     <!-- /input-group -->
                   </li>
                   <li>
-                    <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <%= link_to(root_path) do%>
+                        <i class="fa fa-dashboard fa-fw"></i> Dashboard
+                  <% end %>
                   </li>
                 </ul>
               </div>

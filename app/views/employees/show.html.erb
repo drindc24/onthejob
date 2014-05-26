@@ -1,0 +1,43 @@
+<div id="container">
+  <h1 class="page-header"><%= current_employee.name %></h1>
+  <div class="row">
+    <%= panel("panel-info", current_employee.sick_leaves, "Sick Leaves left", "File Sick Leave")%>
+    <%= panel("panel-success", current_employee.vacation_leaves, "Vacation Leaves left", "File Vacation Leave")%>
+  </div><!-- /.row -->
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Leaves
+        </div>
+        <!-- /.panel-heading -->
+            <div class="panel-body">
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                  <thead>
+                  <tr>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Status</th>
+                    <th>Reason</th>
+                    <th>Total Hours</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <% current_employee.absences.each do |absence| %>
+                      <tr class="odd gradeX">
+                        <td><%= absence.start_date %></td>
+                        <td><%= absence.end_date %></td>
+                        <td><%= absence.status %></td>
+                        <td><%= absence.reasons %></td>
+                        <td><%= absence.total_hours %></td>
+                      </tr>
+                  <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
